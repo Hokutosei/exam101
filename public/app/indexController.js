@@ -6,6 +6,8 @@
     app.controller('IndexController', function($scope, $facebook) {
         $scope.test = "test"
 
+        $facebook.parse()
+
         // bind directly to the response promise
 
         // use the promise in code
@@ -52,7 +54,7 @@
 
 
         $scope.checkLoginState = function() {
-
+            log("called?")
             $facebook.getLoginStatus().then(function(data) {
                 statusChangeCallback(data)
             })
