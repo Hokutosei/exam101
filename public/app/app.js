@@ -1,7 +1,1 @@
-(function() {
-    'use strict';
-
-    var app = angular.module('SnsExam', ['ngResource', 'ngRoute'])
-
-
-}());
+    var app = angular.module('SnsExam', ['ngResource', 'ngRoute', 'facebook'])
