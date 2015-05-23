@@ -43,6 +43,7 @@
             }
         }
 
+        // test api that simply get user data
         function testAPI() {
             console.log('Welcome!  Fetching your information.... ');
             FB.api('/me', function(response) {

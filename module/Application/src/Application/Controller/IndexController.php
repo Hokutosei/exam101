@@ -16,6 +16,15 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
+        // $this->getServiceLocator()->get('db');
+        $sm = $this->getServiceLocator();
+        $this->adapter = $sm->get('Zend\Db\Adapter\Adapter');
+
+        error_log("testa", 0);
+        var_dump($this->adapter);
+
+
         return new ViewModel();
     }
+
 }
