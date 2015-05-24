@@ -29,13 +29,6 @@ class TopicController extends AbstractRestfulController
         return $response;
     }
 
-    // public function setEventManager(EventManagerInterface $events)
-    // {
-    //     $this->events = $events;
-    //
-    //     $events->attach('dispatch', array($this, 'checkOptions'), 10);
-    // }
-
     public function checkOptions($e)
     {
         if(in_array($e->getRequest()->getMethod(), $this->_getOptions())) {
@@ -50,15 +43,17 @@ class TopicController extends AbstractRestfulController
 
     public function topicList()
     {
-        error_log("called!", 0);
-        $topicAPIService = $this->getServiceLocator()->get('userAPIService');
+        $this->adapter = $this->serviceLocator->get('Zend\Db\Adapter\Adapter');
+        $sql = "show databases";
+        $statement = $this->adapter->query($sql);
+        $result = $statement->execute();
 
-        //$result = $userAPIService
-        $response = $this-getResponse();
-        $response->setStatusCode(201);
-        $res = array('test' => "res");
+        return $result;
+    }
 
-        return new JsonMOdel($res);
+    public function get($id)
+    {   // Action used for GET requests with resource Id
+        return new JsonModel($this->topicList());
     }
 
 }

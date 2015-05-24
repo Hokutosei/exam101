@@ -23,7 +23,7 @@ return array(
             'topic' => array(
                 'type' => 'segment',
                 'options' => array(
-                    'route' => '/api/topic',
+                    'route' => '/api/topic[/:id]',
                     'defaults' => array(
                         'controller' => 'Application\Controller\Topic'
                     ),
