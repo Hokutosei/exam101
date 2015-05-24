@@ -8,6 +8,10 @@
         return {
             getTopics: function() {
                 return $http.get('/api/topic/topiclist');
+            },
+
+            createTopic: function(req) {
+                return $http.post('/api/topic/create', req);
             }
         }
 

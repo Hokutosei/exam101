@@ -12,6 +12,7 @@
 
         <!-- Le styles -->
         <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+                        ->prependStylesheet($this->basePath('css/index_styles.less'), 'screen', true, array('rel' => 'stylesheet/less'))
                         ->prependStylesheet($this->basePath('css/style.css'))
                         ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
                         ->prependStylesheet($this->basePath('css/bootstrap.min.css')) ?>
@@ -49,7 +50,6 @@
             <?php echo $this->content; ?>
             <hr>
             <footer>
-                <p>&copy; 2005 - <?php echo date('Y') ?> by Zend Technologies Ltd. <?php echo $this->translate('All rights reserved.') ?></p>
             </footer>
         </div> <!-- /container -->
         <?php echo $this->inlineScript()
@@ -59,6 +59,7 @@
             ->prependFile($this->basePath('app/fb_login_config.js'))
             ->prependFile($this->basePath('js/ngFacebook.js'))
             ->prependFile($this->basePath('app/app.js'))
+            ->prependFile($this->basePath('js/less.min.js'), 'text/javascript')
             ->prependFile($this->basePath('js/angular-route.min.js'))
             ->prependFile($this->basePath('js/angular-resource.min.js'))
             ->prependFile($this->basePath('js/angular.min.js'))

@@ -5,6 +5,7 @@
 
     app.controller('IndexController', function($scope, $facebook, IndexService) {
         $scope.test = "test"
+        $scope.topic = {}
 
         $facebook.parse()
 
@@ -58,6 +59,15 @@
             log("called?")
             $facebook.getLoginStatus().then(function(data) {
                 statusChangeCallback(data)
+            })
+        }
+
+        $scope.createTopic = function() {
+            $scope.topic['created_at'] = new Date();
+            log($scope.topic)
+            IndexService.createTopic($scope.topic).success(function(data, status) {
+                log(data)
+                log(status)
             })
         }
 
