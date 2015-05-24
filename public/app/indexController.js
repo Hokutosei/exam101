@@ -3,7 +3,7 @@
 
     var log = function(str) { console.log(str); };
 
-    app.controller('IndexController', function($scope, $facebook) {
+    app.controller('IndexController', function($scope, $facebook, IndexService) {
         $scope.test = "test"
 
         $facebook.parse()
@@ -61,6 +61,12 @@
             })
         }
 
+        $scope.fetchTopics = function() {
+            IndexService.getTopics().success(function(data) {
+                log(data)
+            })
+        }
+        $scope.fetchTopics()
 
     })
 }());

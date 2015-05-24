@@ -30,29 +30,15 @@ class IndexController extends AbstractActionController
     // }
 
     public function testAction() {
-        // $this->getServiceLocator()->get('db');
-        // $sm = $this->getServiceLocator();
         $this->adapter = $this->serviceLocator->get('Zend\Db\Adapter\Adapter');
-        // $sm = $this->getServiceLocator();
-        // $this->adapter = $this->serviceLocator->get('Zend\Db\Adapter\Adapter');
 
         $sql = "show tables";
         $statement = $this->adapter->query($sql);
         $result = $statement->execute();
 
-        error_log("testa test acton", 0);
-        var_dump($result);
     }
 
     public function adapter() {
-        // if (!$this->adapter) {
-        //      $sm = $this->getServiceLocator();
-        //      $this->adapter = $sm->get('Zend\Db\Adapter\Adapter');
-        //   }
-        // return $this->adapter;
-        // $this->getServiceLocator()->get('db');
-        // $sm = $this->getServiceLocator();
-        // $this->adapter = $sm->get('Zend\Db\Adapter\Adapter');
         $sm = $this->getServiceLocator();
         $this->adapter = $this->serviceLocator->get('Zend\Db\Adapter\Adapter');
 

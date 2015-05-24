@@ -44,7 +44,7 @@ class TopicController extends AbstractRestfulController
     public function topicList()
     {
         $this->adapter = $this->serviceLocator->get('Zend\Db\Adapter\Adapter');
-        $sql = "show databases";
+        $sql = "show tables";
         $statement = $this->adapter->query($sql);
         $result = $statement->execute();
 

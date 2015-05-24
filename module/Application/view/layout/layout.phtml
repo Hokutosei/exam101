@@ -53,6 +53,7 @@
             </footer>
         </div> <!-- /container -->
         <?php echo $this->inlineScript()
+            ->prependFile($this->basePath('app/index_service.js'))
             ->prependFile($this->basePath('app/IndexController.js'))
 
             ->prependFile($this->basePath('app/fb_login_config.js'))
