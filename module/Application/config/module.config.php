@@ -20,6 +20,15 @@ return array(
                     ),
                 ),
             ),
+            'topic' => array(
+                'type' => 'segment',
+                'options' => array(
+                    'route' => '/api/topic',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Topic'
+                    ),
+                ),
+            ),
             // The following is a route to simplify getting started creating
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
@@ -73,10 +82,14 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
+            'Application\Controller\Index' => 'Application\Controller\IndexController',
+            'Application\Controller\Topic' => 'Application\Controller\TopicController'
         ),
     ),
     'view_manager' => array(
+        'strategies' => array(
+                'ViewJsonStrategy',
+        ),
         'display_not_found_reason' => true,
         'display_exceptions'       => true,
         'doctype'                  => 'HTML5',
